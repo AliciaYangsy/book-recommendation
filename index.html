@@ -147,6 +147,14 @@
     background-image: var(--pattern);
     opacity: .8;
   }
+  .cover-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+  }
   .cover::after {
     content: "";
     position: absolute;
@@ -210,6 +218,7 @@
     align-items: start;
   }
   .author-portrait {
+    position: relative;
     width: 130px;
     height: 165px;
     background: linear-gradient(160deg, var(--accent-2), #1b2733 70%);
@@ -222,6 +231,14 @@
     font-size: .8rem;
     letter-spacing: .15em;
     text-align: center;
+    overflow: hidden;
+  }
+  .author-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .author-card h3 { color: var(--accent); margin-bottom: .4rem; }
   .author-card .sub { color: var(--muted); font-size: .85rem; margin-bottom: 1rem; }
@@ -305,6 +322,7 @@
 <footer>
   <p><strong>版本信息</strong>：伯纳德·路易斯《中东两千年》最新修订版，郑之书 译，民主与建设出版社，2020 年；ISBN 9787513931236。</p>
   <p>豆瓣与京东均为外部链接，页面内容以各平台实际信息为准；本站为个人推荐页，不构成购买意见。</p>
+  <p>作者照片：Nataev 拍摄，来源 <a href="https://commons.wikimedia.org/wiki/File:Bernard_Lewis_in_2012_(1).JPG" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>，采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> 授权。</p>
   <p>「一册 · 荐书」v0.1 —— 内容平台雏形，当前仅收录一本书。</p>
 </footer>
 
@@ -315,6 +333,7 @@ const BOOKS = [{
   edition: "最新修订版",
   enTitle: "The Middle East: 2000 Years of History from the Rise of Christianity to the Present Day",
   coverEn: "The Middle East · 2000 Years of History",
+  coverImage: "assets/cover.jpg",
   tagline: "从基督教兴起到二十世纪末——民族、宗教与帝国，如何塑造了今天新闻里的「中东」。",
   meta: {
     author: "[英] 伯纳德·路易斯",
@@ -342,6 +361,7 @@ const BOOKS = [{
   },
   author: {
     name: "[英] 伯纳德·路易斯",
+    photo: "assets/author.jpg",
     bio: "Bernard Lewis（1916–2018），英裔美国历史学家，普林斯顿大学近东研究荣休教授，西方最具影响力的中东史学者之一。毕生专注于中东、伊斯兰与奥斯曼历史研究，著有《历史上的阿拉伯人》《现代土耳其的兴起》《穆斯林发现欧洲》等。",
     translator: "译者郑之书为台湾学者、中东史研究者，译文在中文读者中口碑良好。"
   },
@@ -440,6 +460,7 @@ function heroHTML(b) {
     </div>
     <div class="cover-wrap">
       <div class="cover" role="img" aria-label="《${b.title}》${b.edition} 书籍封面示意图">
+        <img class="cover-img" src="${b.coverImage}" alt="《${b.title}》${b.edition} 封面" onerror="this.style.display='none'">
         <p class="cover-ornament">✦ ✦ ✦</p>
         <p class="cover-title">${b.title}</p>
         <p class="cover-en">${b.coverEn}</p>
@@ -493,7 +514,10 @@ function authorHTML(b) {
       <h2>作者简介</h2>
     </div>
     <div class="author-card">
-      <div class="author-portrait" role="img" aria-label="作者肖像示意图">BERNARD<br>LEWIS<br>1916–2018</div>
+      <div class="author-portrait" role="img" aria-label="${a.name}肖像">
+        <img class="author-photo" src="${a.photo}" alt="${a.name}肖像" onerror="this.style.display='none'">
+        BERNARD<br>LEWIS<br>1916–2018
+      </div>
       <div>
         <h3>${a.name}</h3>
         <p class="sub">历史学家 · 普林斯顿大学近东研究荣休教授</p>
