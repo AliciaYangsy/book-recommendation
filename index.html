@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《中东两千年》— 一本书看懂中东两千年 | 一册·荐书</title>
+<meta name="description" content="伯纳德·路易斯《中东两千年》推荐页：卖点、内容简介、作者简介、书中掠影、两千年时间轴、推荐语，一键直达豆瓣与京东。">
+<style>
+  :root {
+    --bg: #17120d;
+    --bg-soft: #1f1812;
+    --surface: #2a2118;
+    --ink: #f0e4cf;
+    --muted: #b7a184;
+    --accent: #c9a227;
+    --accent-2: #2e4a62;
+    --line: rgba(201, 162, 39, .25);
+    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84'%3E%3Cpath d='M42 2 L49 35 L82 42 L49 49 L42 82 L35 49 L2 42 L35 35 Z' fill='none' stroke='%23c9a227' stroke-opacity='.09'/%3E%3Ccircle cx='42' cy='42' r='6' fill='none' stroke='%23c9a227' stroke-opacity='.09'/%3E%3C/svg%3E");
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: var(--pattern);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .serif, h1, h2, h3, .lede, .cover { font-family: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", Georgia, serif; }
+  a { color: var(--accent); }
+  a:hover { opacity: .85; }
+
+  /* 顶栏 */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(23, 18, 13, .92);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(6px);
+  }
+  .topbar-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: .8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .brand { font-family: "Songti SC", serif; font-size: 1.15rem; letter-spacing: .2em; color: var(--ink); text-decoration: none; }
+  .brand b { color: var(--accent); font-weight: 600; }
+  .nav { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+  .nav a { color: var(--muted); text-decoration: none; font-size: .9rem; }
+  .nav a:hover { color: var(--accent); }
+
+  main, footer { position: relative; z-index: 1; }
+  .section { max-width: 1080px; margin: 0 auto; padding: 4.5rem 1.5rem; }
+  .kicker {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    color: var(--accent);
+    letter-spacing: .35em;
+    font-size: .8rem;
+    text-transform: uppercase;
+    margin-bottom: .8rem;
+  }
+  .kicker::before, .kicker::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+  h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 1.2rem; font-weight: 600; }
+  .section-head { text-align: center; margin-bottom: 2.5rem; }
+  .section-head p { color: var(--muted); max-width: 640px; margin: 0 auto; }
+
+  /* 首屏 */
+  .hero {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    color: var(--accent);
+    letter-spacing: .3em;
+    font-size: .85rem;
+    margin-bottom: 1rem;
+  }
+  h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.2; font-weight: 700; }
+  .hero-sub { color: var(--muted); font-size: 1.05rem; margin-top: .8rem; letter-spacing: .05em; }
+  .lede { font-size: clamp(1.05rem, 2vw, 1.25rem); margin: 1.5rem 0 2rem; color: #e8d9bd; }
+  .meta-chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
+  .meta-chips span {
+    font-size: .85rem;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    padding: .3rem .8rem;
+    border-radius: 2px;
+  }
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .85rem 1.5rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: filter .15s;
+  }
+  .btn:hover { filter: brightness(1.12); opacity: 1; }
+  .btn-douban { background: #0a7a3d; color: #fff; }
+  .btn-jd { background: #d4231a; color: #fff; }
+  .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+  .btn small { font-weight: 400; opacity: .85; }
+
+  .cover-wrap { display: flex; justify-content: center; }
+  .cover {
+    width: min(300px, 72vw);
+    aspect-ratio: 3 / 4;
+    background:
+      linear-gradient(150deg, var(--cover-a) 0%, var(--cover-b) 48%, var(--cover-c) 100%);
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .55), 0 4px 14px rgba(0, 0, 0, .4);
+    position: relative;
+    padding: 2rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--pattern);
+    opacity: .8;
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: 18px;
+    width: 1px;
+    background: linear-gradient(rgba(255,255,255,.14), rgba(255,255,255,.03));
+    box-shadow: 1px 0 2px rgba(0,0,0,.4);
+  }
+  .cover > * { position: relative; z-index: 1; }
+  .cover-ornament { color: var(--cover-gold); letter-spacing: .5em; font-size: .9rem; margin-bottom: 1.2rem; }
+  .cover-title { font-size: clamp(1.7rem, 5vw, 2.3rem); color: #f3e7cf; font-weight: 700; line-height: 1.35; }
+  .cover-en { font-size: .68rem; letter-spacing: .22em; color: rgba(243, 231, 207, .72); margin-top: .8rem; text-transform: uppercase; }
+  .cover-rule { width: 56px; height: 1px; background: var(--cover-gold); margin: 1.2rem auto; }
+  .cover-author { color: rgba(243, 231, 207, .9); font-size: .95rem; }
+  .cover-meta { color: rgba(243, 231, 207, .6); font-size: .75rem; margin-top: .5rem; }
+
+  /* 卖点卡片 */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.2rem; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 1.5rem 1.4rem;
+    border-radius: 3px;
+  }
+  .card h3 { font-size: 1.15rem; margin-bottom: .6rem; color: var(--accent); }
+  .card p { color: var(--muted); font-size: .95rem; }
+  .num {
+    display: inline-block;
+    font-family: Georgia, serif;
+    color: var(--accent);
+    border: 1px solid var(--line);
+    width: 2rem; height: 2rem;
+    line-height: 1.9rem;
+    text-align: center;
+    border-radius: 50%;
+    font-size: .9rem;
+    margin-bottom: .8rem;
+  }
+
+  /* 简介 */
+  .intro-body { max-width: 760px; margin: 0 auto; color: #e6d7ba; }
+  .intro-body p { margin-bottom: 1.1rem; }
+  .parts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+  .parts span { border: 1px solid var(--line); color: var(--accent); padding: .35rem .9rem; border-radius: 2px; font-size: .9rem; }
+
+  /* 作者 */
+  .author-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .author-portrait {
+    width: 130px;
+    height: 165px;
+    background: linear-gradient(160deg, var(--accent-2), #1b2733 70%);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(243, 231, 207, .55);
+    font-family: Georgia, serif;
+    font-size: .8rem;
+    letter-spacing: .15em;
+    text-align: center;
+  }
+  .author-card h3 { color: var(--accent); margin-bottom: .4rem; }
+  .author-card .sub { color: var(--muted); font-size: .85rem; margin-bottom: 1rem; }
+  .author-card p { color: #e6d7ba; font-size: .98rem; }
+
+  /* 书中掠影 */
+  .glimpse .card { background: transparent; }
+  .glimpse .card p { color: #d9c7a6; }
+
+  /* 时间轴 */
+  .tl { max-width: 720px; margin: 0 auto; border-left: 1px solid var(--line); padding-left: 1.8rem; }
+  .tl-item { position: relative; padding-bottom: 1.8rem; }
+  .tl-item::before {
+    content: "";
+    position: absolute;
+    left: -2.28rem;
+    top: .45rem;
+    width: 9px; height: 9px;
+    background: var(--accent);
+    transform: rotate(45deg);
+  }
+  .tl-era { color: var(--accent); font-family: Georgia, serif; letter-spacing: .08em; font-size: .95rem; }
+  .tl-item h3 { font-size: 1.05rem; margin: .2rem 0 .2rem; }
+  .tl-item p { color: var(--muted); font-size: .92rem; }
+
+  /* 推荐语 */
+  .praise-card { background: var(--surface); border: 1px solid var(--line); border-radius: 3px; padding: 1.6rem 1.8rem; }
+  .praise-card + .praise-card { margin-top: 1.2rem; }
+  .praise-card blockquote { color: #e6d7ba; font-size: 1.02rem; }
+  .praise-card cite { display: block; margin-top: .7rem; color: var(--accent); font-style: normal; font-size: .9rem; }
+
+  /* 适合谁 */
+  .fit-col { background: var(--surface); border: 1px solid var(--line); border-radius: 3px; padding: 1.6rem; }
+  .fit-col h3 { margin-bottom: 1rem; }
+  .fit-col.fit-for h3 { color: var(--accent); }
+  .fit-col.not-for h3 { color: #d08b78; }
+  .fit-col li { color: #e6d7ba; margin-left: 1.1rem; padding-left: .3rem; margin-bottom: .5rem; font-size: .95rem; }
+
+  /* 相关书目 */
+  .rel-actions { margin-top: .9rem; }
+  .rel-actions a { font-size: .85rem; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 2.5rem 1.5rem 3.5rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: .85rem;
+  }
+  footer p { margin-bottom: .4rem; }
+
+  @media (max-width: 760px) {
+    .topbar-inner { flex-direction: column; gap: .4rem; }
+    .nav { justify-content: center; gap: .8rem; }
+    .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 3rem; text-align: center; }
+    .cta-row { justify-content: center; }
+    .meta-chips { justify-content: center; }
+    .author-card { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+    .section { padding: 3.2rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top"><b>一册</b> · 荐书</a>
+    <nav class="nav" aria-label="页面导航">
+      <a href="#selling">卖点</a>
+      <a href="#intro">简介</a>
+      <a href="#author">作者</a>
+      <a href="#glimpses">书中掠影</a>
+      <a href="#timeline">时间轴</a>
+      <a href="#praise">推荐</a>
+      <a href="#related">相关书目</a>
+    </nav>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  <p><strong>版本信息</strong>：伯纳德·路易斯《中东两千年》最新修订版，郑之书 译，民主与建设出版社，2020 年；ISBN 9787513931236。</p>
+  <p>豆瓣与京东均为外部链接，页面内容以各平台实际信息为准；本站为个人推荐页，不构成购买意见。</p>
+  <p>「一册 · 荐书」v0.1 —— 内容平台雏形，当前仅收录一本书。</p>
+</footer>
+
+<script>
+/* ponytail: 单书数据渲染；做多书时把 BOOKS 换成 fetch('/books.json') 即可，其余逻辑不动。 */
+const BOOKS = [{
+  title: "中东两千年",
+  edition: "最新修订版",
+  enTitle: "The Middle East: 2000 Years of History from the Rise of Christianity to the Present Day",
+  coverEn: "The Middle East · 2000 Years of History",
+  tagline: "从基督教兴起到二十世纪末——民族、宗教与帝国，如何塑造了今天新闻里的「中东」。",
+  meta: {
+    author: "[英] 伯纳德·路易斯",
+    translator: "郑之书 译",
+    publisher: "民主与建设出版社 · 2020",
+    isbn: "ISBN 9787513931236"
+  },
+  links: {
+    douban: "https://book.douban.com/subject/35236022/",
+    jd: "https://item.jd.com/10075413025043.html"
+  },
+  sellingPoints: [
+    { title: "中东史大师的传世之作", text: "伯纳德·路易斯是西方最重要的中东史学者之一，本书是他毕生研究的浓缩，也是西方中东通史中最常被引用的经典之一。" },
+    { title: "两千年一线贯穿", text: "以基督历纪元为起点，一路写到二十世纪末的 1994 年：一条线看懂中东为何成为今日的「火药桶」。" },
+    { title: "2020 未删节完整全译本", text: "最新修订版新增 93 张插图、9 张地图、历法说明与大事年表，配有译者郑之书严谨而流畅的译本。" },
+    { title: "媒体与读者双重口碑", text: "曾获台湾《中国时报》年度十大好书；被许多读者列为「了解中东的第一本通史」。" }
+  ],
+  intro: {
+    paragraphs: [
+      "这是一部跨越两千年的中东通史。作者从基督教的兴起写起，一路穿过阿拉伯帝国的崛起与黄金时代、十字军东征、蒙古西征、奥斯曼帝国的统治，直到二十世纪帝国解体、民族国家诞生与阿以冲突，止于 1994 年。",
+      "全书关心的不是编年式的流水账，而是几个反复出现的大问题：民族与宗教身份如何塑造政治？中东的边界从哪里来？当外部力量退场后，这片土地上的旧冲突与新秩序如何交织？读过之后，新闻里那些看似突发的冲突，会变得「其来有自」。",
+      "作者以历史学家的克制叙事，从宗教、文化、社会与地缘多条线索展开，是理解现代中东政治困局的历史入门书。"
+    ],
+    parts: ["绪论", "先祖", "伊斯兰教的初生和巅峰", "横剖面", "现代的挑战"]
+  },
+  author: {
+    name: "[英] 伯纳德·路易斯",
+    bio: "Bernard Lewis（1916–2018），英裔美国历史学家，普林斯顿大学近东研究荣休教授，西方最具影响力的中东史学者之一。毕生专注于中东、伊斯兰与奥斯曼历史研究，著有《历史上的阿拉伯人》《现代土耳其的兴起》《穆斯林发现欧洲》等。",
+    translator: "译者郑之书为台湾学者、中东史研究者，译文在中文读者中口碑良好。"
+  },
+  glimpses: [
+    { title: "身份的多重奏", text: "部落、宗教、民族与帝国认同在中东层层叠加——读懂这些身份的切换，就读懂了中东政治的一半。" },
+    { title: "边界是近代的产物", text: "今日中东的国界多为帝国解体与外部势力安排的结果，这也解释了为什么许多冲突都围绕边界与认同展开。" },
+    { title: "从咖啡馆看大历史", text: "作者擅长从咖啡馆、市集、货币等日常切面进入宏大叙事，让两千年的历史变得具体可感。" }
+  ],
+  timeline: [
+    { era: "公元 1 世纪", title: "基督教在近东兴起", note: "罗马与波斯的对峙拉开序幕，中东成为两大帝国交锋之地。" },
+    { era: "7 世纪", title: "伊斯兰教诞生", note: "阿拉伯帝国崛起，伊斯兰文明在百年间席卷西亚北非。" },
+    { era: "8–13 世纪", title: "伊斯兰黄金时代", note: "学术、贸易与城市文明高度繁荣，东西方文明在此交汇。" },
+    { era: "11–13 世纪", title: "十字军东征", note: "基督教世界与伊斯兰世界的千年互动中，最激烈的一段。" },
+    { era: "13 世纪", title: "蒙古西征", note: "1258 年巴格达陷落，阿拔斯帝国终结，旧秩序被改写。" },
+    { era: "16–20 世纪初", title: "奥斯曼帝国", note: "横跨欧亚非的帝国统治中东数百年，留下深刻的政治与制度遗产。" },
+    { era: "20 世纪", title: "帝国解体与民族国家", note: "一战之后国界重划，民族国家相继诞生，旧冲突与新秩序并存。" },
+    { era: "1948–1994", title: "阿以冲突与现代困局", note: "以色列建国与持续的冲突，成为全书收束于二十世纪末的现实注脚。" }
+  ],
+  praise: [
+    { source: "台湾《中国时报》年度十大好书", text: "「以一部通史，把中东两千年的宗教、民族与地缘脉络讲得清楚而克制，是了解中东不可绕过的入门经典。」" },
+    { source: "本站推荐语", text: "「如果你只读一本中东通史，从这本开始。它不负责给你答案，但会给你一张两千年的地图——之后看任何中东新闻，你都不再是局外人。」" },
+    { source: "关于评分的一点说明", text: "本书豆瓣评分约 6.9，口碑分化：它是一部需要耐心的通史而非故事集。若你想快速建立框架、愿意慢慢读，它依然是最合适的第一本；若只想要轻松叙事，可以先读同主题的延伸书目。" }
+  ],
+  fit: {
+    for: [
+      "零基础、想系统了解中东为何是今天这副模样的读者",
+      "常看国际新闻、想搞懂巴以冲突与中东政局根源的人",
+      "想快速建立「两千年时间框架」的历史爱好者",
+      "送朋友一份「了解中东的第一本书」的送礼人"
+    ],
+    notFor: [
+      "只想看轶事与故事化叙事的轻松读者",
+      "需要前沿专题研究的一线研究者（建议读更专门的著作）",
+      "时间零碎、无法接受慢节奏大部头的读者"
+    ]
+  },
+  related: [
+    { title: "《阿拉伯的劳伦斯》", author: "斯科特·安德森", why: "一战视角，看现代中东的边界如何在战争与阴谋中被划出。", link: "https://search.douban.com/book/subject_search?search_text=阿拉伯的劳伦斯" },
+    { title: "《征服与革命中的阿拉伯人》", author: "尤金·罗根", why: "阿拉伯人视角的近代史，与路易斯的西方视角正好互补。", link: "https://search.douban.com/book/subject_search?search_text=征服与革命中的阿拉伯人" },
+    { title: "《耶路撒冷三千年》", author: "西蒙·蒙蒂菲奥里", why: "以一座圣城串起三千年，城市史视角的绝佳对照读物。", link: "https://search.douban.com/book/subject_search?search_text=耶路撒冷三千年" }
+  ],
+  theme: {
+    bg: "#17120d",
+    bgSoft: "#1f1812",
+    surface: "#2a2118",
+    ink: "#f0e4cf",
+    muted: "#b7a184",
+    accent: "#c9a227",
+    accent2: "#2e4a62",
+    coverA: "#2e4a62",
+    coverB: "#3d2c1a",
+    coverC: "#17120d",
+    coverGold: "#c9a227"
+  }
+}];
+
+/* ponytail: 主题仅调色（换书换 CSS 变量）；若换书需要不同版式，再抽 layout 配置。 */
+function applyTheme(t) {
+  const s = document.documentElement.style;
+  s.setProperty("--bg", t.bg);
+  s.setProperty("--bg-soft", t.bgSoft);
+  s.setProperty("--surface", t.surface);
+  s.setProperty("--ink", t.ink);
+  s.setProperty("--muted", t.muted);
+  s.setProperty("--accent", t.accent);
+  s.setProperty("--accent-2", t.accent2);
+  s.setProperty("--cover-a", t.coverA);
+  s.setProperty("--cover-b", t.coverB);
+  s.setProperty("--cover-c", t.coverC);
+  s.setProperty("--cover-gold", t.coverGold);
+}
+
+function heroHTML(b) {
+  return `
+  <section class="hero" id="top">
+    <div>
+      <p class="hero-eyebrow">一册 · 荐书 / 中东史通识</p>
+      <h1>《${b.title}》</h1>
+      <p class="hero-sub">${b.enTitle}</p>
+      <p class="lede">${b.tagline}</p>
+      <div class="meta-chips">
+        <span>${b.meta.author}</span>
+        <span>${b.meta.translator}</span>
+        <span>${b.meta.publisher}</span>
+        <span>${b.meta.isbn}</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-douban" href="${b.links.douban}" target="_blank" rel="noopener noreferrer" aria-label="打开豆瓣条目查看评分与书评（新窗口）">
+          豆瓣条目 <small>评分 · 书评</small>
+        </a>
+        <a class="btn btn-jd" href="${b.links.jd}" target="_blank" rel="noopener noreferrer" aria-label="前往京东购买本书（新窗口）">
+          京东购买 <small>直达商品页</small>
+        </a>
+        <a class="btn btn-ghost" href="#intro">先看内容简介</a>
+      </div>
+    </div>
+    <div class="cover-wrap">
+      <div class="cover" role="img" aria-label="《${b.title}》${b.edition} 书籍封面示意图">
+        <p class="cover-ornament">✦ ✦ ✦</p>
+        <p class="cover-title">${b.title}</p>
+        <p class="cover-en">${b.coverEn}</p>
+        <p class="cover-rule"></p>
+        <p class="cover-author">${b.meta.author} 著</p>
+        <p class="cover-meta">${b.meta.translator} · ${b.edition}</p>
+      </div>
+    </div>
+  </section>`;
+}
+
+function sellingHTML(b) {
+  return `
+  <section class="section" id="selling">
+    <div class="section-head">
+      <p class="kicker">Why this book</p>
+      <h2>为什么值得读</h2>
+      <p>四个理由，30 秒判断它适不适合你。</p>
+    </div>
+    <div class="grid">
+      ${b.sellingPoints.map((s, i) => `
+        <div class="card">
+          <span class="num">${i + 1}</span>
+          <h3>${s.title}</h3>
+          <p>${s.text}</p>
+        </div>`).join("")}
+    </div>
+  </section>`;
+}
+
+function introHTML(b) {
+  return `
+  <section class="section" id="intro">
+    <div class="section-head">
+      <p class="kicker">About the book</p>
+      <h2>内容简介</h2>
+    </div>
+    <div class="intro-body">
+      ${b.intro.paragraphs.map(p => `<p>${p}</p>`).join("")}
+      <div class="parts">${b.intro.parts.map(p => `<span>${p}</span>`).join("")}</div>
+    </div>
+  </section>`;
+}
+
+function authorHTML(b) {
+  const a = b.author;
+  return `
+  <section class="section" id="author">
+    <div class="section-head">
+      <p class="kicker">About the author</p>
+      <h2>作者简介</h2>
+    </div>
+    <div class="author-card">
+      <div class="author-portrait" role="img" aria-label="作者肖像示意图">BERNARD<br>LEWIS<br>1916–2018</div>
+      <div>
+        <h3>${a.name}</h3>
+        <p class="sub">历史学家 · 普林斯顿大学近东研究荣休教授</p>
+        <p>${a.bio}</p>
+        <p style="margin-top:.9rem">${a.translator}</p>
+      </div>
+    </div>
+  </section>`;
+}
+
+function glimpsesHTML(b) {
+  return `
+  <section class="section glimpse" id="glimpses">
+    <div class="section-head">
+      <p class="kicker">A glimpse inside</p>
+      <h2>书中掠影</h2>
+      <p>三个贯穿全书的历史视角，帮你预读这本书的「文风与立场」。</p>
+    </div>
+    <div class="grid">
+      ${b.glimpses.map(g => `
+        <div class="card">
+          <h3>${g.title}</h3>
+          <p>${g.text}</p>
+        </div>`).join("")}
+    </div>
+  </section>`;
+}
+
+function timelineHTML(b) {
+  return `
+  <section class="section" id="timeline">
+    <div class="section-head">
+      <p class="kicker">2000 years at a glance</p>
+      <h2>两千年时间轴</h2>
+      <p>书中覆盖的关键时代——一本书的跨度，一目了然。</p>
+    </div>
+    <div class="tl">
+      ${b.timeline.map(t => `
+        <div class="tl-item">
+          <span class="tl-era">${t.era}</span>
+          <h3>${t.title}</h3>
+          <p>${t.note}</p>
+        </div>`).join("")}
+    </div>
+  </section>`;
+}
+
+function praiseHTML(b) {
+  return `
+  <section class="section" id="praise">
+    <div class="section-head">
+      <p class="kicker">Why we recommend</p>
+      <h2>推荐语</h2>
+    </div>
+    <div style="max-width:760px;margin:0 auto">
+      ${b.praise.map(p => `
+        <div class="praise-card">
+          <blockquote>「${p.text}」</blockquote>
+          <cite>—— ${p.source}</cite>
+        </div>`).join("")}
+    </div>
+  </section>`;
+}
+
+function fitHTML(b) {
+  return `
+  <section class="section" id="fit">
+    <div class="section-head">
+      <p class="kicker">Is it for you</p>
+      <h2>这本书适合谁</h2>
+    </div>
+    <div class="grid">
+      <div class="fit-col fit-for">
+        <h3>适合你，如果……</h3>
+        <ul>${b.fit.for.map(x => `<li>${x}</li>`).join("")}</ul>
+      </div>
+      <div class="fit-col not-for">
+        <h3>可能不适合，如果……</h3>
+        <ul>${b.fit.notFor.map(x => `<li>${x}</li>`).join("")}</ul>
+      </div>
+    </div>
+  </section>`;
+}
+
+function relatedHTML(b) {
+  return `
+  <section class="section" id="related">
+    <div class="section-head">
+      <p class="kicker">Read next</p>
+      <h2>同主题延伸阅读</h2>
+      <p>读完这本之后，可以从这三个方向继续深入。</p>
+    </div>
+    <div class="grid">
+      ${b.related.map(r => `
+        <div class="card">
+          <h3>${r.title}</h3>
+          <p><strong style="color:var(--muted);font-weight:400">${r.author}</strong><br>${r.why}</p>
+          <p class="rel-actions"><a href="${r.link}" target="_blank" rel="noopener noreferrer">豆瓣搜一下 →</a></p>
+        </div>`).join("")}
+    </div>
+  </section>`;
+}
+
+const b = BOOKS[0];
+applyTheme(b.theme);
+document.getElementById("app").innerHTML =
+  heroHTML(b) + sellingHTML(b) + introHTML(b) + authorHTML(b) +
+  glimpsesHTML(b) + timelineHTML(b) + praiseHTML(b) + fitHTML(b) + relatedHTML(b);
+</script>
+</body>
+</html>
