@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>《中东两千年》— 一本书看懂中东两千年 | 一册·荐书</title>
-<meta name="description" content="伯纳德·路易斯《中东两千年》推荐页：卖点、内容简介、作者简介、书中掠影、两千年时间轴、推荐语，一键直达豆瓣与京东。">
+<title>一册 · 荐书 | 精选书籍推荐</title>
+<meta name="description" content="精选好书推荐页：卖点、内容简介、作者简介、书中掠影、推荐语与购买入口，一键直达豆瓣与京东。">
 <style>
   :root {
     --bg: #17120d;
@@ -61,9 +61,19 @@
   }
   .brand { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; font-size: 1.15rem; letter-spacing: .2em; color: var(--ink); text-decoration: none; }
   .brand b { color: var(--accent); font-weight: 600; }
-  .nav { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+  .nav { display: flex; gap: 1.1rem; flex-wrap: wrap; flex: 1 1 auto; justify-content: center; }
   .nav a { color: var(--muted); text-decoration: none; font-size: .9rem; }
   .nav a:hover { color: var(--accent); }
+  .book-select {
+    background: var(--bg-soft);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: .3rem .5rem;
+    font-size: .85rem;
+    font-family: inherit;
+    flex-shrink: 0;
+  }
 
   main, footer { position: relative; z-index: 1; }
   .section { max-width: 1080px; margin: 0 auto; padding: 4.5rem 1.5rem; }
@@ -302,6 +312,7 @@
       -webkit-overflow-scrolling: touch;
       gap: 1rem;
       scrollbar-width: none;
+      justify-content: flex-start;
     }
     .nav::-webkit-scrollbar { display: none; }
     .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 2.6rem; text-align: center; }
@@ -333,6 +344,7 @@
       <a href="#praise">推荐</a>
       <a href="#related">相关书目</a>
     </nav>
+    <select id="book-select" class="book-select" aria-label="切换书籍"></select>
   </div>
 </header>
 
@@ -341,7 +353,7 @@
 <footer>
   <p><strong>版本信息</strong>：伯纳德·路易斯《中东两千年》最新修订版，郑之书 译，民主与建设出版社，2020 年；ISBN 9787513931236。</p>
   <p>豆瓣与京东均为外部链接，页面内容以各平台实际信息为准；本站为个人推荐页，不构成购买意见。</p>
-  <p>「一册 · 荐书」v0.1 —— 内容平台雏形，当前仅收录一本书。</p>
+  <p>「一册 · 荐书」v0.2 —— 内容平台雏形，当前收录：《中东两千年》、《白鲸》。</p>
 </footer>
 
 <script>
@@ -353,6 +365,7 @@ const BOOKS = [{
   coverEn: "The Middle East · 2000 Years of History",
   coverImage: "assets/cover.jpg",
   tagline: "从基督教兴起到二十世纪末——民族、宗教与帝国，如何塑造了今天新闻里的「中东」。",
+  category: "中东史通识",
   meta: {
     author: "[英] 伯纳德·路易斯",
     translator: "郑之书 译",
@@ -430,6 +443,93 @@ const BOOKS = [{
     accent: "#c9a227",
     accent2: "#2e4a62"
   }
+}, {
+  title: "白鲸",
+  edition: "江苏凤凰文艺出版社版",
+  enTitle: "Moby-Dick; or, The Whale",
+  coverEn: "Moby-Dick · or, The Whale",
+  coverImage: "assets/moby-cover.jpg",
+  tagline: "当一个人把复仇变成信仰，大海就是他的战场——美国文学最伟大的海洋之书。",
+  category: "世界文学经典",
+  meta: {
+    author: "[美] 赫尔曼·麦尔维尔",
+    translator: "罗山川 译",
+    publisher: "江苏凤凰文艺出版社 · 2021",
+    isbn: "ISBN 9787559456502"
+  },
+  links: {
+    douban: "https://book.douban.com/subject/35524699/",
+    jd: "https://search.jd.com/Search?keyword=%E7%99%BD%E9%B2%B8%20%E7%BD%97%E5%B1%B1%E5%B7%9D"
+  },
+  sellingPoints: [
+    { title: "美国文学的巅峰之作", text: "福克纳说但愿这本书是自己写的，劳伦斯称之为「有史以来最伟大的海洋之书」，是现代文学公认的源头之一。" },
+    { title: "不只是冒险小说", text: "追猎白鲸的表层之下，是命运、执念与自然的寓言；裴廓德号上的众生相，就是一座漂浮的人类社会。" },
+    { title: "备受推崇的罗山川译本", text: "译者毕生主要译作即此一本，文风晓畅、贴合汉语阅读习惯；精装版收录雷蒙德·毕晓普三十幅传世木刻插图。" },
+    { title: "豆瓣 8.3 的经典", text: "约 2400 人评价，被毛姆列入「世界文学十大最佳小说」，是理解美国文学的必读之书。" }
+  ],
+  intro: {
+    paragraphs: [
+      "叙事者以实玛利厌倦了陆地生活，登上捕鲸船「裴廓德号」。船长亚哈在一次航程中被白鲸莫比·迪克咬去一条腿，从此立誓复仇，把整船人拖入一场注定走向毁灭的追猎。",
+      "表面是一段捕鲸冒险，骨子里却是多重寓言：白鲸既是自然伟力，也是命运与执念的化身；来自不同种族、信仰与阶层的水手同船共命，让裴廓德号成为整个人类社会的缩影。",
+      "本书选用罗山川译本（后浪出品、江苏凤凰文艺出版社 2021 年精装重版），文风晓畅、贴合汉语阅读习惯，并收录雷蒙德·毕晓普三十幅木刻插图，是中文世界里口碑极佳的版本。"
+    ],
+    parts: ["出海之前", "裴廓德号", "亚哈的执念", "追猎白鲸", "尾声"]
+  },
+  author: {
+    name: "[美] 赫尔曼·麦尔维尔",
+    photo: "assets/moby-author.jpg",
+    bio: "Herman Melville（1819–1891），19 世纪美国杰出小说家与诗人。年轻时多次出海、当过捕鲸船员，这段经历深刻影响了他的写作。代表作《白鲸》生前无人问津，20 世纪被重新发现，跻身美国文学最伟大的作品之列。",
+    translator: "译者罗山川（1930–2005），北京大学西语系出身，毕生主要译作即《白鲸》，译文以晓畅、贴合汉语阅读习惯著称。"
+  },
+  glimpses: [
+    { title: "执念与毁灭", text: "亚哈把复仇变成信仰——一个人对抗一头鲸，也可以是一场人与命运之间没有胜者的战争。" },
+    { title: "船上的众生相", text: "不同肤色、信仰与出身的水手在同一块甲板上讨生活，裴廓德号就是一座移动的人类社会。" },
+    { title: "一部海洋百科全书", text: "麦尔维尔把捕鲸工艺、鲸的生物学、神话与历史熔于一炉，让小说同时成为一座知识宝库。" }
+  ],
+  timeline: [
+    { era: "序章", title: "叫我以实玛利", note: "厌倦陆地的叙事者决定出海，登上捕鲸船裴廓德号。" },
+    { era: "启航", title: "神秘的船长", note: "亚哈迟迟没有露面，水手们隐约感到这次航程并不寻常。" },
+    { era: "亚哈现身", title: "复仇的誓约", note: "他召集全船宣布真正的目标：追猎咬断他一条腿的白鲸莫比·迪克。" },
+    { era: "漫漫航程", title: "遇见鲸群与船队", note: "一路捕鲸、偶遇其他船只，亚哈拒绝一切关于返航与放弃的劝告。" },
+    { era: "三日之战", title: "与白鲸正面交锋", note: "第一、二日接连失利，亚哈的执念把全船推向最终的对决。" },
+    { era: "尾声", title: "唯一的生还者", note: "裴廓德号沉没，唯有以实玛利生还，成为这段航程的讲述者。" }
+  ],
+  praise: [
+    { source: "D.H. 劳伦斯", text: "有史以来最伟大的海洋之书，也是世界上最奇特、最精彩的书之一。" },
+    { source: "威廉·福克纳", text: "他曾说，但愿这本书是自己写的。许多年后，它被公认为美国文学最伟大的作品之一。" },
+    { source: "本站推荐语", text: "别被厚度吓退：一旦登上裴廓德号，你会在亚哈的执念与大海的呼吸之间，读完一部关于命运与疯狂的人类寓言。" },
+    { source: "关于评分的一点说明", text: "豆瓣约 8.3 分（约 2400 人评价）。它慢热、包含大量鲸类学章节，不是轻松读物；但读进去之后，几乎无人否认它的伟大。" }
+  ],
+  fit: {
+    for: [
+      "想读美国文学扛鼎之作的经典读者",
+      "喜欢海洋、冒险与「人与自然对抗」主题的人",
+      "能接受慢热、大部头与知识性章节的耐心读者",
+      "想收藏一版插图精美、译本流畅的精装书的人"
+    ],
+    notFor: [
+      "追求快节奏情节、不习惯大量鲸类学描写的读者",
+      "只想读轻松通俗小说的读者",
+      "时间零碎、短期内难以读完长篇小说的人"
+    ]
+  },
+  related: [
+    { title: "《老人与海》", author: "海明威", why: "同写人与大海的对抗，短小精悍的现代经典。", link: "https://search.douban.com/book/subject_search?search_text=老人与海" },
+    { title: "《海上劳工》", author: "雨果", why: "人与自然的搏斗，浪漫主义笔下的海洋史诗。", link: "https://search.douban.com/book/subject_search?search_text=海上劳工" },
+    { title: "《金银岛》", author: "史蒂文森", why: "海盗与宝藏的冒险传奇，海洋小说的另一极。", link: "https://search.douban.com/book/subject_search?search_text=金银岛" }
+  ],
+  theme: {
+    bg: "#0c1522",
+    bgSoft: "#101d2d",
+    surface: "#15273b",
+    ink: "#e9f0f6",
+    muted: "#9fb3c6",
+    accent: "#9cc3e6",
+    accent2: "#1d4e6e"
+  },
+  timelineTitle: "故事脉络",
+  timelineKicker: "The voyage at a glance",
+  timelineNote: "小说的叙事脉络——一场注定走向毁灭的追猎。"
 }];
 
 /* ponytail: 主题仅调色（换书换 CSS 变量）；若换书需要不同版式，再抽 layout 配置。 */
@@ -448,7 +548,7 @@ function heroHTML(b) {
   return `
   <section class="hero" id="top">
     <div>
-      <p class="hero-eyebrow">一册 · 荐书 / 中东史通识</p>
+      <p class="hero-eyebrow">一册 · 荐书 / ${b.category}</p>
       <h1>《${b.title}》</h1>
       <p class="hero-sub">${b.enTitle}</p>
       <p class="lede">${b.tagline}</p>
@@ -560,9 +660,9 @@ function timelineHTML(b) {
   return `
   <section class="section" id="timeline">
     <div class="section-head">
-      <p class="kicker">2000 years at a glance</p>
-      <h2>两千年时间轴</h2>
-      <p>书中覆盖的关键时代——一本书的跨度，一目了然。</p>
+      <p class="kicker">${b.timelineKicker || "2000 years at a glance"}</p>
+      <h2>${b.timelineTitle || "两千年时间轴"}</h2>
+      <p>${b.timelineNote || "书中覆盖的关键时代——一本书的跨度，一目了然。"}</p>
     </div>
     <div class="tl">
       ${b.timeline.map(t => `
@@ -631,11 +731,28 @@ function relatedHTML(b) {
   </section>`;
 }
 
-const b = BOOKS[0];
-applyTheme(b.theme);
-document.getElementById("app").innerHTML =
-  heroHTML(b) + sellingHTML(b) + introHTML(b) + authorHTML(b) +
-  glimpsesHTML(b) + timelineHTML(b) + praiseHTML(b) + fitHTML(b) + relatedHTML(b);
+function renderBook(i) {
+  const b = BOOKS[i];
+  applyTheme(b.theme);
+  document.getElementById("app").innerHTML =
+    heroHTML(b) + sellingHTML(b) + introHTML(b) + authorHTML(b) +
+    glimpsesHTML(b) + timelineHTML(b) + praiseHTML(b) + fitHTML(b) + relatedHTML(b);
+  document.title = "《" + b.title + "》— 书籍推荐 | 一册·荐书";
+}
+
+const bookSelect = document.getElementById("book-select");
+BOOKS.forEach(function (bk, i) {
+  const opt = document.createElement("option");
+  opt.value = i;
+  opt.textContent = bk.title;
+  bookSelect.appendChild(opt);
+});
+bookSelect.addEventListener("change", function () {
+  renderBook(Number(bookSelect.value));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+renderBook(0);
 </script>
 </body>
 </html>
