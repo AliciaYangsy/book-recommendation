@@ -19,6 +19,7 @@
   }
   * { box-sizing: border-box; margin: 0; }
   html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 84px; }
   body {
     font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
     background: var(--bg);
@@ -293,13 +294,29 @@
   footer p { margin-bottom: .4rem; }
 
   @media (max-width: 760px) {
-    .topbar-inner { flex-direction: column; gap: .4rem; }
-    .nav { justify-content: center; gap: .8rem; }
-    .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 3rem; text-align: center; }
+    .topbar-inner { flex-wrap: nowrap; gap: .6rem; }
+    .brand { flex-shrink: 0; }
+    .nav {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      gap: 1rem;
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+    .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 2.6rem; text-align: center; }
     .cta-row { justify-content: center; }
-    .meta-chips { justify-content: center; }
+    .cta-row .btn { flex: 1 1 auto; justify-content: center; padding: .8rem 1rem; }
+    .btn-ghost { flex-basis: 100%; }
+    .meta-chips { justify-content: center; gap: .5rem; }
+    .meta-chips span { font-size: .8rem; padding: .25rem .65rem; }
+    .cover { width: min(260px, 64vw); }
+    .cover-wrap { margin-top: .25rem; }
+    .praise-card { padding: 1.3rem 1.2rem; }
+    .tl { padding-left: 1.4rem; }
     .author-card { grid-template-columns: 1fr; justify-items: center; text-align: center; }
-    .section { padding: 3.2rem 1.2rem; }
+    .section { padding: 3rem 1.2rem; }
+    footer { padding: 2rem 1.2rem 2.8rem; }
   }
 </style>
 </head>
