@@ -34,7 +34,7 @@
     pointer-events: none;
     z-index: 0;
   }
-  .serif, h1, h2, h3, .lede, .cover { font-family: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", Georgia, serif; }
+  .serif, h1, h2, h3 { font-family: "Kaiti SC", "STKaiti", "KaiTi", Georgia, sans-serif; }
   a { color: var(--accent); }
   a:hover { opacity: .85; }
 
@@ -56,7 +56,7 @@
     justify-content: space-between;
     gap: 1rem;
   }
-  .brand { font-family: "Songti SC", serif; font-size: 1.15rem; letter-spacing: .2em; color: var(--ink); text-decoration: none; }
+  .brand { font-family: "Kaiti SC", "STKaiti", "KaiTi", sans-serif; font-size: 1.15rem; letter-spacing: .2em; color: var(--ink); text-decoration: none; }
   .brand b { color: var(--accent); font-weight: 600; }
   .nav { display: flex; gap: 1.1rem; flex-wrap: wrap; }
   .nav a { color: var(--muted); text-decoration: none; font-size: .9rem; }
@@ -79,97 +79,14 @@
   .section-head { text-align: center; margin-bottom: 2.5rem; }
   .section-head p { color: var(--muted); max-width: 640px; margin: 0 auto; }
 
-  /* 首屏 */
-  .hero {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 5rem 1.5rem 4rem;
-    display: grid;
-    grid-template-columns: 1.15fr .85fr;
-    gap: 3.5rem;
-    align-items: center;
-  }
-  .hero-eyebrow {
-    color: var(--accent);
-    letter-spacing: .3em;
-    font-size: .85rem;
-    margin-bottom: 1rem;
-  }
-  h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.2; font-weight: 700; }
-  .hero-sub { color: var(--muted); font-size: 1.05rem; margin-top: .8rem; letter-spacing: .05em; }
-  .lede { font-size: clamp(1.05rem, 2vw, 1.25rem); margin: 1.5rem 0 2rem; color: #e8d9bd; }
-  .meta-chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
-  .meta-chips span {
-    font-size: .85rem;
-    color: var(--muted);
-    border: 1px solid var(--line);
-    padding: .3rem .8rem;
-    border-radius: 2px;
-  }
-  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
-    padding: .85rem 1.5rem;
-    border-radius: 2px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: filter .15s;
-  }
-  .btn:hover { filter: brightness(1.12); opacity: 1; }
-  .btn-douban { background: #0a7a3d; color: #fff; }
-  .btn-jd { background: #d4231a; color: #fff; }
-  .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
-  .btn small { font-weight: 400; opacity: .85; }
-
-  .cover-wrap { display: flex; justify-content: center; }
-  .cover {
-    width: min(300px, 72vw);
-    aspect-ratio: 3 / 4;
-    background:
-      linear-gradient(150deg, var(--cover-a) 0%, var(--cover-b) 48%, var(--cover-c) 100%);
-    border: 1px solid var(--line);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, .55), 0 4px 14px rgba(0, 0, 0, .4);
-    position: relative;
-    padding: 2rem 1.6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-  }
-  .cover::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: var(--pattern);
-    opacity: .8;
-  }
-  .cover-img {
-    position: absolute;
-    inset: 0;
+  /* 首屏：整页封面图 */
+  .hero { max-width: none; margin: 0; padding: 0; }
+  .hero-img {
+    display: block;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
-    z-index: 2;
   }
-  .cover::after {
-    content: "";
-    position: absolute;
-    top: 0; bottom: 0; left: 18px;
-    width: 1px;
-    background: linear-gradient(rgba(255,255,255,.14), rgba(255,255,255,.03));
-    box-shadow: 1px 0 2px rgba(0,0,0,.4);
-  }
-  .cover > * { position: relative; z-index: 1; }
-  .cover-ornament { color: var(--cover-gold); letter-spacing: .5em; font-size: .9rem; margin-bottom: 1.2rem; }
-  .cover-title { font-size: clamp(1.7rem, 5vw, 2.3rem); color: #f3e7cf; font-weight: 700; line-height: 1.35; }
-  .cover-en { font-size: .68rem; letter-spacing: .22em; color: rgba(243, 231, 207, .72); margin-top: .8rem; text-transform: uppercase; }
-  .cover-rule { width: 56px; height: 1px; background: var(--cover-gold); margin: 1.2rem auto; }
-  .cover-author { color: rgba(243, 231, 207, .9); font-size: .95rem; }
-  .cover-meta { color: rgba(243, 231, 207, .6); font-size: .75rem; margin-top: .5rem; }
 
   /* 卖点卡片 */
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.2rem; }
@@ -293,9 +210,6 @@
   @media (max-width: 760px) {
     .topbar-inner { flex-direction: column; gap: .4rem; }
     .nav { justify-content: center; gap: .8rem; }
-    .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 3rem; text-align: center; }
-    .cta-row { justify-content: center; }
-    .meta-chips { justify-content: center; }
     .author-card { grid-template-columns: 1fr; justify-items: center; text-align: center; }
     .section { padding: 3.2rem 1.2rem; }
   }
@@ -331,16 +245,7 @@
 const BOOKS = [{
   title: "中东两千年",
   edition: "最新修订版",
-  enTitle: "The Middle East: 2000 Years of History from the Rise of Christianity to the Present Day",
-  coverEn: "The Middle East · 2000 Years of History",
   coverImage: "assets/cover.jpg",
-  tagline: "从基督教兴起到二十世纪末——民族、宗教与帝国，如何塑造了今天新闻里的「中东」。",
-  meta: {
-    author: "[英] 伯纳德·路易斯",
-    translator: "郑之书 译",
-    publisher: "民主与建设出版社 · 2020",
-    isbn: "ISBN 9787513931236"
-  },
   links: {
     douban: "https://book.douban.com/subject/35236022/",
     jd: "https://item.jd.com/10075413025043.html"
@@ -410,11 +315,7 @@ const BOOKS = [{
     ink: "#f0e4cf",
     muted: "#b7a184",
     accent: "#c9a227",
-    accent2: "#2e4a62",
-    coverA: "#2e4a62",
-    coverB: "#3d2c1a",
-    coverC: "#17120d",
-    coverGold: "#c9a227"
+    accent2: "#2e4a62"
   }
 }];
 
@@ -428,47 +329,12 @@ function applyTheme(t) {
   s.setProperty("--muted", t.muted);
   s.setProperty("--accent", t.accent);
   s.setProperty("--accent-2", t.accent2);
-  s.setProperty("--cover-a", t.coverA);
-  s.setProperty("--cover-b", t.coverB);
-  s.setProperty("--cover-c", t.coverC);
-  s.setProperty("--cover-gold", t.coverGold);
 }
 
 function heroHTML(b) {
   return `
   <section class="hero" id="top">
-    <div>
-      <p class="hero-eyebrow">一册 · 荐书 / 中东史通识</p>
-      <h1>《${b.title}》</h1>
-      <p class="hero-sub">${b.enTitle}</p>
-      <p class="lede">${b.tagline}</p>
-      <div class="meta-chips">
-        <span>${b.meta.author}</span>
-        <span>${b.meta.translator}</span>
-        <span>${b.meta.publisher}</span>
-        <span>${b.meta.isbn}</span>
-      </div>
-      <div class="cta-row">
-        <a class="btn btn-douban" href="${b.links.douban}" target="_blank" rel="noopener noreferrer" aria-label="打开豆瓣条目查看评分与书评（新窗口）">
-          豆瓣条目 <small>评分 · 书评</small>
-        </a>
-        <a class="btn btn-jd" href="${b.links.jd}" target="_blank" rel="noopener noreferrer" aria-label="前往京东购买本书（新窗口）">
-          京东购买 <small>直达商品页</small>
-        </a>
-        <a class="btn btn-ghost" href="#intro">先看内容简介</a>
-      </div>
-    </div>
-    <div class="cover-wrap">
-      <div class="cover" role="img" aria-label="《${b.title}》${b.edition} 书籍封面示意图">
-        <img class="cover-img" src="${b.coverImage}" alt="《${b.title}》${b.edition} 封面" onerror="this.style.display='none'">
-        <p class="cover-ornament">✦ ✦ ✦</p>
-        <p class="cover-title">${b.title}</p>
-        <p class="cover-en">${b.coverEn}</p>
-        <p class="cover-rule"></p>
-        <p class="cover-author">${b.meta.author} 著</p>
-        <p class="cover-meta">${b.meta.translator} · ${b.edition}</p>
-      </div>
-    </div>
+    <img class="hero-img" src="${b.coverImage}" alt="《${b.title}》${b.edition} 封面">
   </section>`;
 }
 
